@@ -1,0 +1,87 @@
+class FamilyModel {
+    constructor() {
+        this.defaultJSON = [
+            { id: 1, name: "Md Nor Bin Damat", role: "Grandfather", gender: "Male", birthYear: 1945, deathYear: 2013, generation: 1, parents: [], spouses: [2], children: [101, 102, 5, 103, 104, 105, 106, 107, 108], description: "Patriarch of the paternal family." },
+            { id: 2, name: "Zainon Binti Choboi", role: "Grandmother", gender: "Female", birthYear: 1948, deathYear: 2017, generation: 1, parents: [], spouses: [1], children: [101, 102, 5, 103, 104, 105, 106, 107, 108], description: "Matriarch of the paternal family." },
+            { id: 3, name: "Nasir Bin Abd. Rashid", role: "Grandfather", gender: "Male", birthYear: 1950, generation: 1, parents: [], spouses: [4], children: [201, 202, 6, 203, 204, 205, 206, 207, 208], description: "Grandfather from maternal side." },
+            { id: 4, name: "Maimunah Binti Salleh", role: "Grandmother", gender: "Female", birthYear: 1953, generation: 1, parents: [], spouses: [3], children: [201, 202, 6, 203, 204, 205, 206, 207, 208], description: "Grandmother from maternal side." },
+
+            // --- PATERNAL SIBLINGS
+            { id: 101, name: "Mohd Zarin", role: "1st Child", gender: "Male", birthYear: 1965, generation: 2, parents: [1, 2], spouses: [], children: [], description: "Eldest aunt from paternal side." },
+            { id: 102, name: "Mohd Ali", role: "2nd Child", gender: "Male", birthYear: 1966, generation: 2, parents: [1, 2], spouses: [], children: [], description: "Uncle from paternal side." },
+            { id: 5, name: "Ahmad Kamal", role: "Father (3rd Child)", gender: "Male", birthYear: 1967, generation: 2, parents: [1, 2], spouses: [6], children: [7, 8, 11, 12], description: "Father, 3rd child of Md Nor & Zainon." },
+            { id: 103, name: "Nor Aslina", role: "4th Child", gender: "Female", birthYear: 1969, generation: 2, parents: [1, 2], spouses: [], children: [], description: "Aunt from paternal side." },
+            { id: 104, name: "Nor Asura ", role: "5th Child", gender: "Female", birthYear: 1970, generation: 2, parents: [1, 2], spouses: [], children: [], description: "Uncle from paternal side." },
+            { id: 105, name: "Mohd Nasir", role: "6th Child", gender: "Male", birthYear: 1972, generation: 2, parents: [1, 2], spouses: [], children: [], description: "Aunt from paternal side." },
+            { id: 106, name: "Mohd Rafi", role: "7th Child", gender: "Male", birthYear: 1974, generation: 2, parents: [1, 2], spouses: [], children: [], description: "Uncle from paternal side." },
+            { id: 107, name: "Mohd Rizal", role: "8th Child", gender: "Male", birthYear: 1975, generation: 2, parents: [1, 2], spouses: [], children: [], description: "Aunt from paternal side." },
+            { id: 108, name: "Mohd Zaidi", role: "9th Child", gender: "Male", birthYear: 1978, generation: 2, parents: [1, 2], spouses: [], children: [], description: "Youngest uncle from paternal side." },
+
+            // --- MATERNAL SIBLINGS
+            { id: 201, name: "Mohd Nazri", role: "1st Child", gender: "Male", birthYear: 1967, generation: 2, parents: [3, 4], spouses: [], children: [], description: "Eldest uncle from maternal side." },
+            { id: 202, name: "Mohd Zamri", role: "2nd Child", gender: "Male", birthYear: 1968, generation: 2, parents: [3, 4], spouses: [], children: [], description: "Uncle from maternal side." },
+            { id: 6, name: "Eda Suraya", role: "Mother (3rd Child)", gender: "Female", birthYear: 1969, generation: 2, parents: [3, 4], spouses: [5], children: [7, 8, 11, 12], description: "Mother, 3rd child of Nasir & Maimunah." },
+            { id: 203, name: "Norhanita", role: "4th Child", gender: "Female", birthYear: 1970, generation: 2, parents: [3, 4], spouses: [], children: [], description: "Aunt from maternal side." },
+            { id: 204, name: "Roszalina", role: "5th Child", gender: "Female", birthYear: 1972, generation: 2, parents: [3, 4], spouses: [], children: [], description: "Uncle from maternal side." },
+            { id: 205, name: "Saiful Amri", role: "6th Child", gender: "Male", birthYear: 1975, generation: 2, parents: [3, 4], spouses: [], children: [], description: "Aunt from maternal side." },
+            { id: 206, name: "Mohd Khairi", role: "7th Child", gender: "Male", birthYear: 1977, generation: 2, parents: [3, 4], spouses: [], children: [], description: "Uncle from maternal side." },
+            { id: 207, name: "Norsuriyati", role: "8th Child", gender: "Female", birthYear: 1979, generation: 2, parents: [3, 4], spouses: [], children: [], description: "Aunt from maternal side." },
+            { id: 208, name: "Noradila", role: "9th Child", gender: "Female", birthYear: 1983, generation: 2, parents: [3, 4], spouses: [], children: [], description: "Youngest uncle from maternal side." },
+
+            // --- GENERATION 3: Children
+            { id: 7, name: "Ahmad Taufiq", role: "Eldest Brother", gender: "Male", birthYear: 1992, generation: 3, parents: [5, 6], spouses: [9], children: [], description: "Eldest brother." },
+            { id: 8, name: "Ahmad Farhan", role: "2nd Eldest Brother", gender: "Male", birthYear: 1994, generation: 3, parents: [5, 6], spouses: [10], children: [], description: "Second eldest brother." },
+            { id: 9, name: "Fatin Nurafiqah", role: "Spouse", gender: "Female", birthYear: 1992, generation: 3, parents: [], spouses: [7], children: [], description: "Spouse." },
+            { id: 10, name: "Raja Aisyah Zahira", role: "Spouse", gender: "Female", birthYear: 1995, generation: 3, parents: [], spouses: [8], children: [], description: "Spouse." },
+            { id: 11, name: "Farahanis Suraya", role: "Daughter", gender: "Female", birthYear: 2000, generation: 3, parents: [5, 6], spouses: [], children: [], description: "Daughter." },
+            { id: 12, name: "Farah Yasmin Suraya", role: "Daughter", gender: "Female", birthYear: 2003, generation: 3, parents: [5, 6], spouses: [], children: [], description: "Youngest daughter." }
+        ];
+        this.familyData = [...this.defaultJSON];
+    }
+
+    async loadInitialData() {
+        try {
+            const response = await fetch('data/family.json');
+            if (response.ok) {
+                const fetchedData = await response.json();
+                if (fetchedData && fetchedData.length > 0) {
+                    this.defaultJSON = fetchedData;
+                    this.familyData = JSON.parse(JSON.stringify(this.defaultJSON));
+                }
+            }
+        } catch (err) {
+            console.warn("Masa muat turun JSON gagal, guna memori asal.");
+        }
+    }
+
+    getAllMembers() { return this.familyData; }
+    getPersonById(id) { return this.familyData.find(person => person.id === id); }
+    filterMembers(searchQuery = '', roleFilter = 'ALL') {
+        const query = searchQuery.trim().toLowerCase();
+        return this.familyData.filter(person => {
+            const matchesName = query === '' || person.name.toLowerCase().includes(query);
+            const matchesRole = roleFilter === 'ALL' || person.role.toLowerCase().includes(roleFilter.toLowerCase()) || (roleFilter === 'Sibling' && person.role.includes('Child'));
+            return matchesName && matchesRole;
+        });
+    }
+    getRelativesInfo(person) {
+        const mapIdsToPersons = (ids) => ids.map(id => this.getPersonById(id)).filter(Boolean);
+        return {
+            parents: mapIdsToPersons(person.parents || []),
+            spouses: mapIdsToPersons(person.spouses || []),
+            children: mapIdsToPersons(person.children || [])
+        };
+    }
+    getRawJSONString() { return JSON.stringify(this.familyData, null, 2); }
+    setRawJSONString(jsonString) {
+        try {
+            const parsed = JSON.parse(jsonString);
+            if (!Array.isArray(parsed)) throw new Error("JSON must be an array.");
+            this.familyData = parsed;
+            return { success: true };
+        } catch (err) {
+            return { success: false, error: err.message };
+        }
+    }
+    resetToDefault() { this.familyData = JSON.parse(JSON.stringify(this.defaultJSON)); }
+}
